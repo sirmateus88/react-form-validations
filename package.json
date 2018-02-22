@@ -1,10 +1,10 @@
 {
-  "name": "form-validations",
-  "version": "1.0.0",
+  "name": "react-real-time-form-validation",
+  "version": "1.0.2",
   "description": "React real time validations of form fields",
-  "main": "Validations.js",
+  "main": "app/index.js",
+  "exports": "public/index.js",
   "scripts": {
-    "test": "mocha ./tests --recursive --watch --require @babel/polyfill --require @babel/register",
     "build": "webpack",
     "webpack": "webpack"
   },
@@ -12,15 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/sirmateus88/react-form-validations.git"
   },
-  "author": "Matthew Appleby",
+  "author": "Matthew Appleby <mappleby1@me.com> (https://github.com/sirmateus88)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sirmateus88/react-form-validations/issues"
   },
   "homepage": "https://github.com/sirmateus88/react-form-validations#readme",
   "dependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.0.1",
     "react": "^16.2.0",
     "redux": "^3.7.2",
     "validator": "^9.4.1"
