@@ -1,7 +1,8 @@
-import ValidationForm from '../Components/ValidationForm';
+import ValidationForm from './ValidationForm';
 import store, {updateStatus, addValidation, clearValidation, clearErrors, gotErrors} from './ValidationsStore';
 import testValidator from 'validator';
 import React, { Component } from 'react';
+//import {ValidationButton, ValidationItems} from './ValidationComponents';
 
 export default function Validations(){
 }
@@ -76,7 +77,7 @@ export class ValidationItems extends Component {
       let stateofComponent = state.formStatus.filter(statusObj => statusObj.name === this.props.name);
       let componentState = stateofComponent.length ? stateofComponent[0].status : '';
 
-      let shouldValidate = state.stateChanged.filter(name => name === this.props.name).length ? true : false;
+      let shouldValidate = !!state.stateChanged.filter(name => name === this.props.name).length;
 
       this.setState({validations, componentState, shouldValidate});
     })
