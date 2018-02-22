@@ -1,0 +1,22 @@
+{
+  "name": "form-validations",
+  "version": "1.0.0",
+  "description": "React real time validations of form fields",
+  "main": "Validations.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirmateus88/react-form-validations.git"
+  },
+  "author": "Matthew Appleby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirmateus88/react-form-validations/issues"
+  },
+  "homepage": "https://github.com/sirmateus88/react-form-validations#readme",
+  "dependencies": {
+    "webpack": "^3.11.0"
+  }
+}
