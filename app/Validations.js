@@ -2,7 +2,7 @@ import ValidationForm from './ValidationForm';
 import store, {updateStatus, addValidation, clearValidation, clearErrors, gotErrors} from './ValidationsStore';
 import testValidator from 'validator';
 import React, { Component } from 'react';
-import {ValidationButton, ValidationItems} from './ValidationComponents';
+//import {ValidationButton, ValidationItems} from './ValidationComponents';
 
 export default function Validations(){
 }
@@ -58,89 +58,89 @@ const notBlankValidation = function(item){
 
 testValidator.notBlank = notBlankValidation;
 
-// export class ValidationItems extends Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       validations: [],
-//       componentState: '',
-//       shouldValidate: false
-//     }
-//     this.validate = this.validate.bind(this);
-//   }
+export class ValidationItems extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      validations: [],
+      componentState: '',
+      shouldValidate: false
+    }
+    this.validate = this.validate.bind(this);
+  }
 
-//   componentDidMount(){
-//     this.unsubscribe = store.subscribe(() => {
-//       let state = store.getState()
-//       let validations = state.validations.filter(validationObj => validationObj.name === this.props.name)
+  componentDidMount(){
+    this.unsubscribe = store.subscribe(() => {
+      let state = store.getState()
+      let validations = state.validations.filter(validationObj => validationObj.name === this.props.name)
 
-//       let stateofComponent = state.formStatus.filter(statusObj => statusObj.name === this.props.name);
-//       let componentState = stateofComponent.length ? stateofComponent[0].status : '';
+      let stateofComponent = state.formStatus.filter(statusObj => statusObj.name === this.props.name);
+      let componentState = stateofComponent.length ? stateofComponent[0].status : '';
 
-//       let shouldValidate = !!state.stateChanged.filter(name => name === this.props.name).length;
+      let shouldValidate = !!state.stateChanged.filter(name => name === this.props.name).length;
 
-//       this.setState({validations, componentState, shouldValidate});
-//     })
-//   }
+      this.setState({validations, componentState, shouldValidate});
+    })
+  }
 
-//   componentWillUnmount(){
-//       this.unsubscribe();
-//   }
+  componentWillUnmount(){
+      this.unsubscribe();
+  }
 
-//   validate(){
-//     let errorMessages = [];
-//     if(!this.state.shouldValidate) return [];
-//     if(this.state.validations.length){
-//       this.state.validations.forEach(validation => {
-//         if(!validation.expression(this.state.componentState)) errorMessages.push(validation.message);
-//       })
-//     }
-//     return errorMessages;
-//   }
+  validate(){
+    let errorMessages = [];
+    if(!this.state.shouldValidate) return [];
+    if(this.state.validations.length){
+      this.state.validations.forEach(validation => {
+        if(!validation.expression(this.state.componentState)) errorMessages.push(validation.message);
+      })
+    }
+    return errorMessages;
+  }
 
-//   render(){
-//     return (
-//       <div className="validations">
-//         {this.validate().map((error, idx) => {return <ValidationForm key={idx} message={error} />})}
-//       </div>
-//     )
-//   }
-// }
+  render(){
+    return (
+      <div className="validations">
+        {this.validate().map((error, idx) => {return <ValidationForm key={idx} message={error} />})}
+      </div>
+    )
+  }
+}
 
-// export class ValidationButton extends Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       disabled: true
-//     }
-//   }
+export class ValidationButton extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      disabled: true
+    }
+  }
 
-//   componentDidMount(){
-//     this.unsubscribe = store.subscribe(() => {
-//       let state = store.getState()
-//       let errors = state.errors;
-//       let disabled = false;
-//       errors.forEach(item => {
-//         if (item.errors.length) disabled = true;
-//       })
+  componentDidMount(){
+    this.unsubscribe = store.subscribe(() => {
+      let state = store.getState()
+      let errors = state.errors;
+      let disabled = false;
+      errors.forEach(item => {
+        if (item.errors.length) disabled = true;
+      })
 
-//       this.setState({disabled});
-//     })
-//   }
+      this.setState({disabled});
+    })
+  }
 
-//   componentWillUnmount(){
-//       this.unsubscribe();
-//   }
+  componentWillUnmount(){
+      this.unsubscribe();
+  }
 
 
-//   render(){
-//     return (
-//       <button
-//         type="submit"
-//         disabled={this.state.disabled}
-//       >
-//           {this.props.name}
-//       </button>
-//     )
-//   }
-// }
+  render(){
+    return (
+      <button
+        type="submit"
+        disabled={this.state.disabled}
+      >
+          {this.props.name}
+      </button>
+    )
+  }
+}

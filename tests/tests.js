@@ -1,5 +1,7 @@
-import Validations from '../Validations.js'
-import chai, {expect} from 'chai';
+const Validations = require('../public');
+
+console.log(Validations);
+/*import chai, {expect} from 'chai';
 
 describe('Validation Methods', () => {
 
@@ -12,4 +14,4 @@ describe('Validation Methods', () => {
       const isFunction = typeof validationInstance;
       expect(isFunction).to.be.equal('function');
   });
-});
+});*/

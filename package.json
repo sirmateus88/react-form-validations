@@ -1,8 +1,8 @@
 {
   "name": "react-real-time-form-validation",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "React real time validations of form fields",
-  "main": "app/index.js",
+  "main": "public/index.js",
   "exports": "public/index.js",
   "scripts": {
     "build": "webpack",

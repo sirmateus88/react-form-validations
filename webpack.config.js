@@ -6,7 +6,9 @@ module.exports = {
   entry: './app/Validations.js',
   output: {
     path: __dirname,
-    filename: './public/index.js'
+    filename: './public/index.js',
+    library: 'react-real-time-form-validation',
+    libraryTarget: 'commonjs2'
   },
   context: __dirname,
   devtool: 'source-map',
