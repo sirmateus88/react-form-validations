@@ -1,4 +1,4 @@
-# react-form-validations
+# react-real-time-form-validation
 Library of javascript methods and react components that make setting up real time form validations a breeze.
 
 ## TL:DR

@@ -1,6 +1,6 @@
 {
   "name": "react-real-time-form-validation",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React real time validations of form fields",
   "main": "public/index.js",
   "exports": "public/index.js",
